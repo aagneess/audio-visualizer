@@ -1,12 +1,12 @@
-import React from "react";
-import ConnectionScreen from "./screens/ConnectionScreen.js";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from 'react';
+import ConnectionScreen from './screens/ConnectionScreen.js';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 //Animation Pages
-import Animation1 from "./animations/Animation1";
-import Animation2 from "./animations/Animation2";
+import Animation1 from './animations/Animation1';
+import Animation2 from './animations/Animation2';
 
-import "./App.css";
+import './App.css';
 
 function App() {
   return [
@@ -14,18 +14,18 @@ function App() {
       <ConnectionScreen />
     </div>,
     <Router>
-      <nav class="navbar navbar-dark bg-dark">
-        <ul class="navbar-nav">
-          <li class="nav-item">
+      <nav className="navbar navbar-dark bg-dark">
+        <ul className="navbar-nav">
+          <li className="nav-item">
             <Link to="/Animation1">1</Link>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             <Link to="Animation2">2</Link>
           </li>
         </ul>
       </nav>
 
-      <div class="Anim">
+      <div className="Anim">
         <Switch>
           <Route path="/Animation1">
             <Animation1 />

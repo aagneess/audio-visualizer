@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
-import WebPlaybackReact from "../components/Spotify/WebPlaybackReact.js";
-import LoginCallback from "../components/Spotify/LoginCallback.js";
-import LoginScreen from "../screens/LoginScreen.js";
-import NowPlayingScreen from "../screens/NowPlaying.js";
+import WebPlaybackReact from '../components/Spotify/WebPlaybackReact.js';
+import LoginCallback from '../components/Spotify/LoginCallback.js';
+import LoginScreen from '../screens/LoginScreen.js';
+import NowPlayingScreen from '../screens/NowPlaying.js';
 
 window.onSpotifyWebPlaybackSDKReady = () => {};
 
@@ -17,7 +17,7 @@ export default class ConnectionScreen extends Component {
     playerState: null,
   };
 
-  componentWillMount() {
+  async componentDidMount() {
     LoginCallback({
       onSuccessfulAuthorization: this.onSuccessfulAuthorization.bind(this),
       onAccessTokenExpiration: this.onAccessTokenExpiration.bind(this),
@@ -39,20 +39,15 @@ export default class ConnectionScreen extends Component {
       playerState: null,
     });
 
-    console.error("The user access token is expired.");
+    console.error('The user access token is expired.');
   }
 
   render() {
-    let {
-      userDeviceId,
-      userAccessToken,
-      playerLoaded,
-      playerSelected,
-      playerState,
-    } = this.state;
+    let { userAccessToken, playerLoaded, playerSelected, playerState } =
+      this.state;
 
     let webPlaybackSdkProps = {
-      playerName: "Music Visualizer",
+      playerName: 'Music Visualizer',
       playerInitialVolume: 1.0,
       playerRefreshRateMs: 100,
       playerAutoConnect: true,

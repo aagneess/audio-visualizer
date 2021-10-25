@@ -1,6 +1,6 @@
-import LoginCallback from "../Spotify/LoginCallback.js";
+import LoginCallback from '../Spotify/LoginCallback.js';
 window.onSpotifyWebPlaybackSDKReady = () => {};
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
 export default class Connection extends Component {
   state = {
@@ -12,7 +12,7 @@ export default class Connection extends Component {
     playerState: null,
   };
 
-  componentWillMount() {
+  async componentDidMount() {
     LoginCallback({
       onSuccessfulAuthorization: this.onSuccessfulAuthorization.bind(this),
       onAccessTokenExpiration: this.onAccessTokenExpiration.bind(this),
@@ -34,7 +34,7 @@ export default class Connection extends Component {
       playerState: null,
     });
 
-    console.error("The user access token has expired.");
+    console.error('The user access token has expired.');
   }
   render() {
     return <Fragment>{this.props.children}</Fragment>;
