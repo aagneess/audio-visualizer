@@ -3,8 +3,20 @@
   margin: auto;
   background-color: black;
 }
+.fullscreen-btn {
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.fullscreen-btn button {
+  padding: 2rem;
+  border: none;
+}
 .Connection {
   padding: 2rem;
+}
+header {
+  text-align: center;
 }
 nav {
   display: flex;
@@ -27,16 +39,15 @@ nav ul li a:hover {
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
     0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
 }
-.App {
-  text-align: center;
-}
-.Fragment {
-  height: 100%;
-  width: 100vw;
-}
 h2 {
   color: white;
 }
 .song-info span {
   color: white;
+}
+/* ANIMATION CANVAS */
+.Anim,
+canvas {
+  width: 100vw;
+  height: 70vh;
 }
