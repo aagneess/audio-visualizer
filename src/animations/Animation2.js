@@ -21,12 +21,12 @@ function Box(props) {
       onPointerOut={(e) => setHover(false)}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? "hotpink" : "orange"} />
+      <meshStandardMaterial color={hovered ? "hotpink" : "hotpink"} />
     </mesh>
   );
 }
 
-export default function Animation1() {
+export default function Animation2() {
   return (
     <Fragment>
       <Canvas>

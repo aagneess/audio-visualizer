@@ -68,26 +68,24 @@ export default class ConnectionScreen extends Component {
 
     return (
       <div className="Connection">
-        <main>
-          {!userAccessToken && <LoginScreen />}
-          {userAccessToken && (
-            <WebPlaybackReact {...webPlaybackSdkProps}>
-              {playerLoaded && !playerSelected && (
-                <Fragment>
-                  <h2 className="action-orange">
-                    Open Spotify and connect to device 'Music Visualizer'
-                  </h2>
-                </Fragment>
-              )}
+        {!userAccessToken && <LoginScreen />}
+        {userAccessToken && (
+          <WebPlaybackReact {...webPlaybackSdkProps}>
+            {playerLoaded && !playerSelected && (
+              <Fragment>
+                <h2 className="action">
+                  Open Spotify and connect to device 'Music Visualizer'
+                </h2>
+              </Fragment>
+            )}
 
-              {playerLoaded && playerSelected && playerState && (
-                <Fragment>
-                  <NowPlayingScreen playerState={playerState} />
-                </Fragment>
-              )}
-            </WebPlaybackReact>
-          )}
-        </main>
+            {playerLoaded && playerSelected && playerState && (
+              <Fragment>
+                <NowPlayingScreen playerState={playerState} />
+              </Fragment>
+            )}
+          </WebPlaybackReact>
+        )}
       </div>
     );
   }

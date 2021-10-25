@@ -3,16 +3,40 @@
   margin: auto;
   background-color: black;
 }
+.Connection {
+  padding: 2rem;
+}
+nav {
+  display: flex;
+  justify-content: center;
+}
+li {
+  list-style: none;
+}
+ul {
+  padding-left: 0;
+}
+nav ul li a {
+  color: white;
+}
+nav ul li a:focus {
+  color: white;
+}
+nav ul li a:hover {
+  color: white;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
 .App {
   text-align: center;
 }
-section {
-  height: 100vh;
+.Fragment {
+  height: 100%;
   width: 100vw;
 }
 h2 {
   color: white;
 }
-.music-player span {
+.song-info span {
   color: white;
 }

@@ -1,18 +1,42 @@
 import React from "react";
 import ConnectionScreen from "./screens/ConnectionScreen.js";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-//TEST
+//Animation Pages
 import Animation1 from "./animations/Animation1";
+import Animation2 from "./animations/Animation2";
 
 import "./App.css";
 
 function App() {
-  return (
+  return [
     <div className="App">
       <ConnectionScreen />
-      <Animation1 />
-    </div>
-  );
+    </div>,
+    <Router>
+      <nav class="navbar navbar-dark bg-dark">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <Link to="/Animation1">1</Link>
+          </li>
+          <li class="nav-item">
+            <Link to="Animation2">2</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="Anim">
+        <Switch>
+          <Route path="/Animation1">
+            <Animation1 />
+          </Route>
+          <Route path="/Animation2">
+            <Animation2 />
+          </Route>
+        </Switch>
+      </div>
+    </Router>,
+  ];
 }
 
 export default App;

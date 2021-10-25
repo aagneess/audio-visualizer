@@ -9,7 +9,7 @@ export default class NowPlaying extends Component {
     } = playerState.track_window.current_track;
 
     return (
-      <div className="music-player">
+      <div className="song-info">
         <span>
           {track_name} | {artist_name}
         </span>
